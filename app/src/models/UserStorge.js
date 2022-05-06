@@ -17,6 +17,17 @@ class UserStorge {
         }, {});
         return newUsers;
     }
+
+    static getUserInfo(id) {
+        const users = this.#users;
+        const idx = users.id.indexOf(id);
+        const userskey = Object.keys(users)
+        const usersInfo = userskey.reduce((newUser, info) => {
+            newUser[info] = users[info][idx];
+            return newUser;
+        }, {});
+        return usersInfo;
+    }
 }
 
 module.exports = UserStorge;
