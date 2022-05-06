@@ -10,7 +10,7 @@ const output = {
     login: (req, res) => {
         res.render("home/login");
     },
-    register: (re1, res) => {
+    register: (req, res) => {
         res.render("home/register");
     },
 };
