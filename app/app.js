@@ -2,7 +2,6 @@
 
 const express = require("express");
 const app = express();
-const BodyParser = require("body-parser");
 
 const home = require("./src/routes/home");
 
