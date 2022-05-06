@@ -1,9 +1,6 @@
 "use strict";
 
-const users = {
-    id: ["skeleton","admin", "guest"],
-    pw: ["skeleton", "admin", "guest"],
-};
+const UserStorge = require("../../models/UserStorge")
 
 const output = {
     hello: (req, res) => {
@@ -20,19 +17,19 @@ const process = {
         const id = req.body.id,
             pw = req.body.pw;
 
+        const users = (UserStorge.getUser("id", "pw"));
+        const response = {};
         if(users.id.includes(id)) {
             const idx = users.id.indexOf(id);
             if (users.pw[idx] === pw) {
-                return res.json({
-                    success: true,
-                });
+                response.success = true; 
+                return res.json(response);
             }
         }
 
-        return res.json({
-            success: false,
-            msg: "로그인에 실패하셨습니다"
-        });
+        response.success = false;
+        response.msg = "로그인에 실패하셨습니다";
+        return res.json(response);
     },
 };
 
