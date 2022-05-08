@@ -8,7 +8,9 @@ const ctrl = require("./home.crtl")
 router.get("/", ctrl.output.hello);
 router.get("/login", ctrl.output.login);
 router.get("/register", ctrl.output.register);
+router.get("/ForgetPassword", ctrl.output.forgetpassword);
 
 router.post("/login", ctrl.process.login);
+router.post("/register", ctrl.process.register);
 
 module.exports = router;

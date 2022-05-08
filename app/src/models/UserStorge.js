@@ -3,8 +3,8 @@
 class UserStorge {
     static #users = {
         id: ["skeleton","admin", "guest"],
+        email: ["skeleton", "admin", "guest"],
         pw: ["skeleton", "admin", "guest"],
-        name: ["skeleton", "admin", "guest"],
     };
 
     static getUser(...fields) {
@@ -27,6 +27,14 @@ class UserStorge {
             return newUser;
         }, {});
         return usersInfo;
+    }
+
+    static save(usersInfo) {
+        const users = this.#users;
+        users.id.push(usersInfo.id);
+        users.pw.push(usersInfo.pw);
+        users.email.push(usersInfo.email);
+        console.log(users);
     }
 }
 
