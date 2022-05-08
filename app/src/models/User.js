@@ -18,7 +18,8 @@ class User {
         return { success: false, msg: "존재하지 않는 아이디입니다."}
     }
     register() {
-        UserStorge.save(this.body);
+        const response = UserStorge.save(this.body);
+        return response;
     }
 }
 

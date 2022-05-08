@@ -34,7 +34,7 @@ class UserStorge {
         users.id.push(usersInfo.id);
         users.pw.push(usersInfo.pw);
         users.email.push(usersInfo.email);
-        console.log(users);
+        return { success: true};
     }
 }
 
