@@ -32,6 +32,9 @@ const process = {
         const response = await user.register();
         return res.json(response);
     },
+    confirmEmail: async (req, res) => {
+        const number = 1;
+    },
 };
 
 module.exports = {

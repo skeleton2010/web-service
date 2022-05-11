@@ -13,5 +13,6 @@ router.get("/confirmEmail", ctrl.output.confirmEmail);
 
 router.post("/login", ctrl.process.login);
 router.post("/register", ctrl.process.register);
+router.post("/confirmEmail", ctrl.process.confirmEmail);
 
 module.exports = router;

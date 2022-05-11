@@ -29,7 +29,7 @@ function register() {
     .then((res) => res.json())
     .then((res) => {
         if (res.success) {
-            location.href = "/confirmEmail";
+            location.href = "/login";
         } else {
             alert(res.msg);
         }
